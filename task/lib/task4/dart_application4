@@ -1,0 +1,30 @@
+void main() {
+  var rectangle = Rectangle(4, 5, 'Red');
+  var square = Square(3, 'Blue');
+
+  print(rectangle.area);
+  print(square.area);
+}
+
+class Shape {
+  double width;
+  double height;
+
+  Shape(this.width, this.height);
+
+  double get area => width * height;
+}
+
+class Rectangle extends Shape {
+  String color;
+
+  Rectangle(double width, double height, this.color)
+      : super(width, height);
+}
+
+class Square extends Shape {
+  String color;
+
+  Square(double sideLength, this.color)
+      : super(sideLength, sideLength);
+}
