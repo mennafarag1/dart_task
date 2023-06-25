@@ -1,0 +1,48 @@
+void main() {
+  int num = 7;
+
+  // Using named parameters
+  int isNumPrime = isPrime(num: num);
+  print('Using named parameters: $isNumPrime');
+
+  // Using required parameters
+  isNumPrime = isPrimeRequired(num);
+  print('Using required parameters: $isNumPrime');
+
+  // Using optional parameters
+  isNumPrime = isPrimeOptional(num);
+  print('Using optional parameters: $isNumPrime');
+}
+
+// Using named parameters
+int isPrime({required int num}) {
+  if (num <= 1) return 0;
+
+  for (int i = 2; i * i <= num; i++) {
+    if (num % i == 0) return 0;
+  }
+
+  return 1;
+}
+
+// Using required parameters
+int isPrimeRequired(int num) {
+  if (num <= 1) return 0;
+
+  for (int i = 2; i * i <= num; i++) {
+    if (num % i == 0) return 0;
+  }
+
+  return 1;
+}
+
+// Using optional parameters
+int isPrimeOptional([int? num]) {
+  if (num == null || num <= 1) return 0;
+
+  for (int i = 2; i * i <= num; i++) {
+    if (num % i == 0) return 0;
+  }
+
+  return 1;
+}

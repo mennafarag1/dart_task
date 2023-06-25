@@ -1,0 +1,38 @@
+void main() {
+  var kalashnikov = Kalashnikov(30, 'Black', 'Kalashnikov AK-47');
+  var arbj = Arbj(20, 'Green', 'ARBJ M4');
+
+  print(kalashnikov.name); 
+  print(arbj.name); 
+}
+
+class Weapon {
+  int numberOfShots;
+  String color;
+  String name;
+
+  Weapon(this.numberOfShots, this.color, this.name);
+}
+
+class Kalashnikov extends Weapon {
+  double height = 10.5;
+  double price = 1000.0;
+
+  Kalashnikov(int numberOfShots, String color, String name)
+      : super(numberOfShots, color, name);
+
+  @override
+  String get name = 'Kalashnikov AK-47';
+}
+
+class Arbj extends Weapon {
+  double height = 8.0;
+  double price = 800.0;
+
+  Arbj(int numberOfShots, String color, String name)
+      : super(numberOfShots, color, name);
+
+  @override
+  String get name = 'ARBJ M4';
+}
+

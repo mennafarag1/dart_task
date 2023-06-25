@@ -1,0 +1,15 @@
+void main() {
+  Student bert = Student('Bert', 'Smith', 95);
+  Student ernie = Student('Ernie', 'Johnson', 85);
+
+  print('Name: ${bert.firstName} ${bert.lastName}, Grade: ${bert.grade}');
+  print('Name: ${ernie.firstName} ${ernie.lastName}, Grade: ${ernie.grade}');
+}
+
+class Student {
+  final String firstName;
+  final String lastName;
+  int grade;
+
+  Student(this.firstName, this.lastName, this.grade);
+}
